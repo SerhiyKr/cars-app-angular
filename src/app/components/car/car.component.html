@@ -13,9 +13,9 @@
       <li>Цвет колес: <strong>{{colors.wheels}}</strong></li>
     </ul>
   </div>
-  <button class="btn btn-danger">Редактировать</button>
+  <button class="btn btn-danger" (click)="isEditing()">Редактировать</button>
   <div><br></div>
-  <form>
+  <form *ngIf="isEdit">
     <div class="form-group">
       <input type="text"  placeholder="Название машини" class="form-control" [(ngModel)]="name" name="name"><br>
       <input type="text"  placeholder="Скорость" class="form-control" [(ngModel)]="speed" name="speed"><br>

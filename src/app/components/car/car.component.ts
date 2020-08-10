@@ -12,6 +12,7 @@ export class CarComponent implements OnInit {
   model: string;
   colors: Colors;
   options: string[];
+  isEdit: boolean;
 
   constructor() { }
 
@@ -41,6 +42,10 @@ export class CarComponent implements OnInit {
         break;
       }
     }
+  }
+  // tslint:disable-next-line:typedef
+  isEditing() {
+    this.isEdit = !this.isEdit;
   }
 
   // tslint:disable-next-line:typedef

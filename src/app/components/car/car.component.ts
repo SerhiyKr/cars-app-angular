@@ -26,6 +26,23 @@ export class CarComponent implements OnInit {
     };
     this.options = ['ABS', 'Автопилот', 'Авто Паркинг'];
   }
+
+  // tslint:disable-next-line:typedef
+  addOpt(option) {
+    this.options.unshift(option);
+    return false;
+  }
+
+  // tslint:disable-next-line:typedef
+  deleteOpt(option) {
+    for (let i = 0; i < this.options.length; i++) {
+      if (this.options[i] === option) {
+        this.options.splice(i, 1);
+        break;
+      }
+    }
+  }
+
   // tslint:disable-next-line:typedef
   carSelect(carName) {
     if (carName === 'bmw') {
